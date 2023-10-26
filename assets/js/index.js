@@ -3,9 +3,6 @@
 
 
 
-//let token="";
-//Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NDk1Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjk4MzExMTU1LCJleHAiOjE2OTk2MDcxNTUsImp0aSI6ImVkOTdhM2ZmLWNhOGYtNDZhNC1iMGNmLTE3ODMxMGFkODg1ZSJ9.EDrfNTs6_DMTRdWn-nPSM0_KTBN8Dw1VBqOhlNryeVQ
-
 async function signUp(email,nickName,passWord) {  
     await axios.post(`${apiUrl}/users`,{
         "user": {
@@ -136,7 +133,7 @@ async function render() {
             <input data-id="${item.id}" data-completed_at="${item.completed_at}" type="checkbox" />
             <span>${item.content}</span>
             </label>
-            <a href="#" class="delete"></a>
+            <a href="#" class="delete" data-id="${item.id}"></a>
             </li>`;
             }else if(status==='wait'){
                 if(String(item.completed_at)==="null"){
@@ -145,7 +142,7 @@ async function render() {
                     <input data-id="${item.id}" data-completed_at="${item.completed_at}" type="checkbox" />
                     <span>${item.content}</span>
                     </label>
-                    <a href="#" class="delete"></a>
+                    <a href="#" class="delete" data-id="${item.id}"></a>
                     </li>`;
                 }
             }else if(status==='finish'){
@@ -155,7 +152,7 @@ async function render() {
                     <input data-id="${item.id}" data-completed_at="${item.completed_at}" type="checkbox" />
                     <span>${item.content}</span>
                     </label>
-                    <a href="#" class="delete"></a>
+                    <a href="#" class="delete" data-id="${item.id}"></a>
                     </li>`;
                 }
             }
@@ -205,7 +202,7 @@ let list=document.querySelector('.cart_content .list');
 const checkbox=document.querySelector('.checkbox');
 //content footer
 const listFooter=document.querySelector('.list_footer');
-
+signIn('red@mail.com','123456');
 logInForm.addEventListener("click",async (e)=>{
     if(e.target.textContent==='註冊帳號'){
         logInForm.classList.add("opacity-0");
@@ -317,7 +314,11 @@ tab.addEventListener("click",(e)=>{
 list.addEventListener("click",async (e)=>{
     const id=e.target.getAttribute("data-id");
     console.log(id);
-    await statusToDo(id);
+    if(e.target.getAttribute("class")==='delete'){
+        await deleteToDo(id);
+    }else{
+        await statusToDo(id);
+    }
     await render();
 });
 //content footer
