@@ -1,7 +1,7 @@
 # To Do List ![Alt text](assets/images/todo-logo.png)
 
 * [GitHub](https://github.com/bftsai/toDoList)  
-* [master-pages](https://github.com/bftsai/toDoList/pages/index.html)  
+* [master-pages](https://bftsai.github.io/toDoList/pages/index.html)  
 
 ## 🕺&ensp;作者
   - [BF Tsai](https://github.com/bftsai)  
@@ -69,7 +69,7 @@ cd localFolder/toDoList
   - [設計稿](https://www.figma.com/file/pFivfS3rDX3N3u3dN9aIlx/TodoList?node-id=6%3A194)
 
 ## &ensp;API
-  -[API](https://todoo.5xcamp.us/api-docs/index.html)  
+  - [API](https://todoo.5xcamp.us/api-docs/index.html)  
 
 ## 🌄&ensp;圖片素材來源
 - [GitHub](https://www.figma.com/file/pFivfS3rDX3N3u3dN9aIlx/TodoList?node-id=6%3A194)
