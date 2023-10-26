@@ -1,0 +1,17 @@
+{
+  "name": "js-live-week3",
+  "version": "1.0.0",
+  "description": "* [GitHub](https://github.com/bftsai/js-live-beforeClass1)   * [master-pages](https://bftsai.github.io/js-live-beforeClass1/pages/index.html)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve --mode development",
+    "deploy": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "bootstrap": "^5.3.2"
+  }
+}

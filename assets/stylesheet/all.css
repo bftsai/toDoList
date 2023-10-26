@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
+@import url("https://fonts.googleapis.com/css?family=Baloo+Tamma+2:600, 700");
+.container {
+  max-width: 1296px;
+  padding: 0 12px;
+  margin: 0 auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+*, *::before, *::after {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFD370 !important;
+  font-family: "Noto Sans TC", sans-serif !important;
+}
+
+.invalid-feedback {
+  font-size: 14px !important;
+}
+
+.signUpForm, .logInForm, .toDoList {
+  transition: all 0.8s;
+}
+
+.errLogin, .errSignUp {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--bs-form-invalid-color);
+}
+
+.is-invalid-1 ~ .invalid-feedback-1 {
+  display: block;
+}
+
+.invalid-feedback-1 {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--bs-form-invalid-color);
+}
+
+.btn_add {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.card {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.tab li {
+  padding: 12px 0;
+}
+.tab li:hover {
+  cursor: pointer;
+}
+
+.tab li {
+  border-bottom: 2px solid #efefef;
+  padding: 12px 0 10px 0;
+}
+.tab .active {
+  border-color: #000;
+}
+
+.list li {
+  padding-right: 2rem;
+}
+
+.delete {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-decoration: none;
+  color: #adb5bd;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background: url("https://cdn-icons-png.flaticon.com/128/1828/1828778.png") center center;
+  background-size: cover;
+}
+
+.list li:hover, label:hover {
+  cursor: pointer;
+}
+.list li:hover .delete, label:hover .delete {
+  opacity: 1;
+}
+
+.checkbox {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  width: 100%;
+  display: block;
+  padding-left: 44px;
+  cursor: pointer;
+}
+.checkbox span {
+  display: block;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  line-height: 1.5;
+}
+@media (max-width: 575px) {
+  .checkbox span {
+    padding-right: 1rem;
+  }
+}
+.checkbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.checkbox span::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+.checkbox span::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 27%;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 0.5rem;
+  border-radius: 1px;
+  border-bottom: 3px solid #ffd370;
+  border-right: 3px solid #ffd370;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.checkbox input:checked ~ span {
+  color: #9f9a91;
+  text-decoration: line-through;
+}
+.checkbox input:checked ~ span::before {
+  border-color: transparent;
+  transform: translateY(-50%) scale(0);
+}
+.checkbox input:checked ~ span::after {
+  opacity: 1;
+}/*# sourceMappingURL=all.css.map */
