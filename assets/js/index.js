@@ -48,7 +48,7 @@ async function signIn(email,passWord) {
             toDoList.classList.remove("d-none");
             render();
             setTimeout(()=>{
-                owner.textContent=`${res.data.nickname} 的代辦`;
+                owner.textContent=`${res.data.nickname} 的待辦`;
                 toDoList.classList.remove("opacity-0");
             },400);
         },800);
@@ -125,7 +125,8 @@ async function render() {
                 status=item.getAttribute("data-status");
             }
         })
-        //render
+        //render & count 
+        let countWait=0;
         data.forEach((item)=>{
             if(status==="all"){
                 str+=`<li class="position-relative fs-5">
@@ -156,21 +157,18 @@ async function render() {
                     </li>`;
                 }
             }
-        });
-        list.innerHTML=str;
-        //render input & count 
-        let countWait=0;
-        list.querySelectorAll('input').forEach((item,index)=>{
-            if(item.getAttribute("data-completed_at")==="null"){
+            if(item.completed_at===null){
                 countWait++;
-                //console.log('no');
-                //console.log(item.getAttribute("data-completed_at"));
-            }else{
-                list.querySelectorAll('input')[index].checked=true;
-                //console.log(item.getAttribute("data-completed_at"));
             }
         });
+        list.innerHTML=str;
         listFooter.querySelector('p').textContent=`${countWait} 個待完成項目`;
+        //render input
+        list.querySelectorAll('input').forEach((item,index)=>{
+            if(item.getAttribute("data-completed_at")!=="null"){
+                list.querySelectorAll('input')[index].checked=true;
+            }
+        });
     }
 }
 //API
@@ -202,7 +200,7 @@ let list=document.querySelector('.cart_content .list');
 const checkbox=document.querySelector('.checkbox');
 //content footer
 const listFooter=document.querySelector('.list_footer');
-signIn('red@mail.com','123456');
+
 logInForm.addEventListener("click",async (e)=>{
     if(e.target.textContent==='註冊帳號'){
         logInForm.classList.add("opacity-0");
@@ -280,7 +278,6 @@ signUpForm.addEventListener("click",async (e)=>{
     }
 })
 
-//signIn('test@email.com','123456');
 //signOut
 toDoHeader.querySelector('a').addEventListener("click",async (e)=>{
     await signOut();

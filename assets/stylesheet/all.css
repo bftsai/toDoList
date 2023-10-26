@@ -1,26 +1,11 @@
 @import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
 @import url("https://fonts.googleapis.com/css?family=Baloo+Tamma+2:600, 700");
-.container {
-  max-width: 1296px;
-  padding: 0 12px;
-  margin: 0 auto;
-}
-
 img {
   vertical-align: middle;
 }
 
 *, *::before, *::after {
   margin: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #FFD370 !important;
-  font-family: "Noto Sans TC", sans-serif !important;
 }
 
 .invalid-feedback {
@@ -174,4 +159,18 @@ body {
 }
 .checkbox input:checked ~ span::after {
   opacity: 1;
+}
+
+@media (max-width: 392px) {
+  .toDoList .d-flex img {
+    width: 50%;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFD370 !important;
+  font-family: "Noto Sans TC", sans-serif !important;
 }/*# sourceMappingURL=all.css.map */

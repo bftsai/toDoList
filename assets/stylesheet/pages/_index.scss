@@ -144,3 +144,12 @@
       }
     }
   }
+  @media (max-width: 392px) {
+    .toDoList{
+      .d-flex{
+        img{
+          width: 50% ;
+        }
+      }
+    }
+  }
