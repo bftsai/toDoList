@@ -332,4 +332,4 @@ listFooter.querySelector('a').addEventListener("click",(e)=>{
         await deleteToDo(item.id);
         await render();
     });
-})
+});
